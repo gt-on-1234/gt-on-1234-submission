@@ -1,0 +1,2 @@
+[files]
+extend-exclude = ["src/supply_chain_data/**", "*.drawio", "*.svg", "**/*.svg", "README.md", "tests/**"]

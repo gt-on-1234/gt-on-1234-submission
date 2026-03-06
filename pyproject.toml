@@ -1,0 +1,76 @@
+[build-system]
+build-backend = "setuptools.build_meta"
+requires = ["setuptools>=61.0"]
+
+[project]
+authors = [
+  {name = "Forestreet Engineering", email = "engineering+github@forestreet.com"}
+]
+classifiers = [
+  "Programming Language :: Python :: 3.13"
+]
+dependencies = [
+  "fastapi[standard]",
+  "uvicorn[standard]",
+  "setuptools",
+  "pydantic",
+  "ruff",  # For CLI
+  "networkx",
+  "matplotlib"
+]
+description = ""
+name = "backend-interview-supply-chain"
+readme = "README.md"
+requires-python = ">=3.13"
+version = "0.1.0"
+
+[project.optional-dependencies]
+dev = [
+  "httpx",
+  "ipdb",
+  "ipython",
+  "mypy-extensions",
+  "pre-commit",
+  "pytest-asyncio",
+  "pytest",
+  "types-setuptools"
+]
+
+[project.scripts]
+
+[project.urls]
+repository = "https://github.com/forestreet-engineering/backend-interview-supply-chain"
+
+[tool.isort]
+profile = "black"
+py_version = 313
+sections = [
+  "FUTURE",
+  "STDLIB",
+  "THIRDPARTY",
+  "FIRSTPARTY",
+  "LOCALFOLDER"
+]
+
+[tool.mypy]
+plugins = [
+]
+
+[tool.pyright]
+extraPaths = ['./src']
+
+[tool.pytest.ini_options]
+addopts = "--doctest-modules --ignore=_scripts"
+asyncio_mode = "auto"
+markers = [
+  "slow: marks tests as slow (deselect with '-m \"not slow\"')",
+  "local: marks tests as only intended to be run locally as opposed to e.g. on GitHub actions"
+]
+
+[tool.setuptools.package-data]
+supply_chain_data = ["py.typed", "**"]
+supply_chain_network = ["py.typed", "**"]
+
+[tool.setuptools.packages.find]
+namespaces = true
+where = ["src"]

@@ -1,0 +1,17 @@
+fastapi[standard]
+uvicorn[standard]
+setuptools
+pydantic
+ruff
+networkx
+matplotlib
+
+[dev]
+httpx
+ipdb
+ipython
+mypy-extensions
+pre-commit
+pytest-asyncio
+pytest
+types-setuptools
